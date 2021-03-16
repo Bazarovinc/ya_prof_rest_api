@@ -10,3 +10,7 @@ class Notes(models.Model):
     def __str__(self):
         return f'"id": {self.id}, "title": "{self.title}", “content”: “{self.content}”'
 
+    def make_not_blank(self):
+        if self.title == '':
+            return self.content[:N]
+        return self.title
